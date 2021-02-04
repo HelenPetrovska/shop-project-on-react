@@ -10,16 +10,42 @@ import ReactDOM from "react-dom"
 //   "Hello world"
 // )
 
-const Hi = () => {
+const Header = () => {
     return (
         <h1>Hello world</h1>
     )
 }
-const el = <div>
-    <Hi/>
-    <p>lorem</p>
-</div>
 
+const List = () => {
+    return (
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    )
+}
 
+const P = () => {
+    return (
+        <>
+            <p>lorem1</p>
+            <p>lorem2</p>
+            <p>lorem3</p>
+        </>
+    )
+}
 
-ReactDOM.render(el,document.getElementById("root"))
+const App = () => {
+    return (
+        <>
+            <List/>
+            <P/>
+            <Header/>
+        </>
+    )
+}
+
+ReactDOM.render(<App/>,document.getElementById("root"))
