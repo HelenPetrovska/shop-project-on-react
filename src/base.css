@@ -1,0 +1,53 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	background-image: url(patt.png);
+}
+.container {
+	max-width: 100%;
+	margin:0 auto;
+}
+.logo {
+	grid-area: logo;
+}
+.menu {
+	grid-area: menu;
+}
+.cart {
+	grid-area: cart;
+}
+.header-row {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-areas: 
+		"logo"
+		"menu"
+		"cart"
+	;
+}
+.text-center {
+	text-align: center;
+}
+
+@media(min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+	.header-row {
+		grid-template-columns: 1fr 2fr 1fr;
+		grid-template-areas: 
+			"logo menu cart"
+		;
+	}
+}
+@media(min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+@media(min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
