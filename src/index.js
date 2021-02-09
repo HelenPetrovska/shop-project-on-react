@@ -9,25 +9,25 @@ import "./cart.css"
 
 const Header = () => {
     return (
-        <header class="header">
-            <div class="container">
-                <div class="header-row">
-                    <div class="logo text-center">
+        <header className="header">
+            <div className="container">
+                <div className="header-row">
+                    <div className="logo text-center">
                         <img src="img/logo.png" alt=""/>
                     </div>
                     
-                    <div class="menu">
+                    <div className="menu">
                         <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Products</a></li>
-                            <li><a href="">Payment</a></li>
-                            <li><a href="">Shipping</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/">Products</a></li>
+                            <li><a href="/">Payment</a></li>
+                            <li><a href="/">Shipping</a></li>
                         </ul>
                     </div>
                     
-                    <div class="cart text-center">
-                        <div class="products-count">0</div>
-                        <div class="products-price">$500</div>
+                    <div className="cart text-center">
+                        <div className="products-count">0</div>
+                        <div className="products-price">$500</div>
                     </div>
                 </div>
             </div>
@@ -37,13 +37,13 @@ const Header = () => {
 
 const Main = () => {
     return (
-        <main class="main">
-            <div class="container">
-                <div class="row">
-                    <div class="aside">
+        <main className="main">
+            <div className="container">
+                <div className="row">
+                    <div className="aside">
                         Filter
                     </div>
-                    <div class="main-content">
+                    <div className="main-content">
                         Product List
                     </div>
                 </div>
@@ -54,15 +54,16 @@ const Main = () => {
 
 const Footer = () => {
     return (
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
+        <footer className="footer">
+            <div className="container">
+                <div className="row">
                     Footer
                 </div>
             </div>
         </footer>
     )
 }
+
 const App = () => {
     return (
         <>
