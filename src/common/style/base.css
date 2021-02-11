@@ -47,7 +47,11 @@ body {
 	padding: 15px 0;
 	margin-bottom: 15px;
 }
-
+.product-list{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap:15px;
+}
 @media(min-width: 768px) {
 	.container {
 		width: 750px;

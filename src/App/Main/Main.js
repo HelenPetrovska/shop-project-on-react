@@ -6,7 +6,7 @@ const Main = () => {
     return (
         <main className="main">
             <div className="container">
-                <div className="row">
+                <div className="row-main">
                     <div className="aside">
                         Filter
                     </div>
