@@ -1,5 +1,7 @@
 import React from 'react'
 
+import ProductList from './Products/ProductList'
+
 const Main = () => {
     return (
         <main className="main">
@@ -9,7 +11,7 @@ const Main = () => {
                         Filter
                     </div>
                     <div className="main-content">
-                        Product List
+                        <ProductList/>
                     </div>
                 </div>
             </div>
