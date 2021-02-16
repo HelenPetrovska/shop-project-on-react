@@ -3,6 +3,7 @@ import "./ProductListItem.css"
 import PropTypes from 'prop-types'
 
 const ProductListItem = ({
+    image,
     name,
     description,
     type,
@@ -11,6 +12,9 @@ const ProductListItem = ({
 }) => {
     return (
         <div className="product-list-item">
+            <div className="product-img">
+                <img src={image} alt="product-img"/>
+            </div>
             <div className="product-title">{name}</div>
             <div className="product-description">{description}</div>
             <div className="product-features">Type: {type}</div>
@@ -27,10 +31,12 @@ ProductListItem.propTypes = {
     type:PropTypes.string.isRequired,
     cepacity:PropTypes.number.isRequired,    
     price:PropTypes.number.isRequired,
+    image:PropTypes.string,
 }
 
 ProductListItem.defaultProps = {
-    description:"No description..."
+    description:"No description...",
+    image:"/images/no-image.png"
 }
 
 export default ProductListItem

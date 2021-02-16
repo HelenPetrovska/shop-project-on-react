@@ -14,11 +14,13 @@ const ProductList = () => {
                         description,
                         price,
                         cepacity,
-                        type
+                        type,
+                        image,
                     }) => {
                         return (                
                             <ProductListItem
                                 key={id}
+                                image={image}
                                 name={name}
                                 description={description}
                                 type={type}
