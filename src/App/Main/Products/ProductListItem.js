@@ -4,16 +4,11 @@ import PropTypes from 'prop-types'
 
 class ProductListItem extends Component {
 
-    constructor() {
-        super()
-        this.onIncrementClick = this.onIncrementClick.bind(this)
-    }
-
     state = {
         productCount:1,
     }
 
-    onIncrementClick() {
+    onIncrementClick = () => {
         this.setState((prevState) => ({
             productCount:prevState.productCount + 1,
         }))
