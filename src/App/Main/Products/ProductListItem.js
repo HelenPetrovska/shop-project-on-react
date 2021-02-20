@@ -21,23 +21,12 @@ class ProductListItem extends Component {
         }))
     }
 
-    // changeColor() {
-    //     this.setState((prevState) => {
-    //         return prevState.color === "red" ? {color:"green"} : {color:"red"}
-    //     })
-    // }
-
     changeColor() {
         this.setState((prevState) => {
-            if(prevState.color === "red") {
-                return {
-                    color:"green"
-                }
-            } else return {
-                color:"red"
-            }
+            return prevState.color === "red" ? {color:"green"} : {color:"red"}
         })
     }
+
 
     render() {
         const {
