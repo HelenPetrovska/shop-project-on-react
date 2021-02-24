@@ -3,7 +3,7 @@ import ProductListItem from './ProductListItem'
 import products from './products'
 
 const ProductList = ({
-    addProductToCart
+    productsInCart
 }) => {
     return (
         <>
@@ -28,7 +28,7 @@ const ProductList = ({
                                 type={type}
                                 cepacity={cepacity}
                                 price={price}
-                                addProductToCart={addProductToCart}
+                                productsInCart={productsInCart}
                             />
                         )
                     })

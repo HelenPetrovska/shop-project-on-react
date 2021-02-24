@@ -3,8 +3,9 @@ import React from 'react'
 import ProductList from './Products/ProductList'
 
 const Main = ({
-    addProductToCart
+    productsInCart
 }) => {
+    console.log(productsInCart)
     return (
         <main className="main">
             <div className="container">
@@ -14,7 +15,7 @@ const Main = ({
                     </div>
                     <div className="main-content">
                         <ProductList
-                            addProductToCart={addProductToCart}          
+                            productsInCart={productsInCart}         
                         />
                     </div>
                 </div>

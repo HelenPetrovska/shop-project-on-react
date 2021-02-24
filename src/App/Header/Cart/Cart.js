@@ -4,13 +4,15 @@ import "./cart.css"
 
 
 const Cart = ({
-    count,
-    price
+    productsInCart
 }) => {
     return (
         <div className="cart text-center">
-            <div className="products-count">{count}</div>
-            <div className="products-price">${price}</div>
+            {
+                Object.keys(productsInCart).map((productId) => (
+                    <div>{productId}: {productsInCart[productId]}</div>
+                ))
+            }
         </div>
     )
 }
