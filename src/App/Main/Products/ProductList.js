@@ -2,7 +2,9 @@ import React from 'react'
 import ProductListItem from './ProductListItem'
 import products from './products'
 
-const ProductList = () => {
+const ProductList = ({
+    addProductToCart
+}) => {
     return (
         <>
             <h1 className="page-title">Product List</h1>
@@ -26,6 +28,7 @@ const ProductList = () => {
                                 type={type}
                                 cepacity={cepacity}
                                 price={price}
+                                addProductToCart={addProductToCart}
                             />
                         )
                     })

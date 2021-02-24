@@ -3,10 +3,8 @@ import "./ProductListItem.css"
 import PropTypes from 'prop-types'
 
 class ProductListItem extends Component {
-
     state = {
         productCount:1,
-        color:"green",
     }
 
     onIncrementClick() {
@@ -21,13 +19,6 @@ class ProductListItem extends Component {
         }))
     }
 
-    changeColor() {
-        this.setState((prevState) => {
-            return prevState.color === "red" ? {color:"green"} : {color:"red"}
-        })
-    }
-
-
     render() {
         const {
             image,
@@ -35,7 +26,8 @@ class ProductListItem extends Component {
             description,
             type,
             cepacity,
-            price
+            price,
+            addProductToCart
         } = this.props;
 
         return (
@@ -44,10 +36,6 @@ class ProductListItem extends Component {
                     <img src={image} alt="product-img"/>
                 </div>
                 <div className="product-title">{name}</div>
-                <p>Color:{this.state.color}</p>
-                <button
-                    onClick={() => this.changeColor()}
-                >Change Color</button>
                 <div className="product-description">{description}</div>
                 <div className="product-features">Type: {type}</div>
                 <div className="product-features">Cepacity: {cepacity} Gb</div>
@@ -64,7 +52,10 @@ class ProductListItem extends Component {
                     >+</button>
                 </div>
                 <div className="product-price">{price}$</div>
-                <button className="btn-add-to-cart">Add to cart</button>
+                <button 
+                    className="btn-add-to-cart"
+                    onClick={() => addProductToCart(this.state.productCount,price)}
+                >Add to cart</button>
             </div>
         )
     }
