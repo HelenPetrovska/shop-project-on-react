@@ -4,6 +4,11 @@ import products from '../../Main/Products/products'
 
 import "./cart.css"
 
+const productsObject = products.reduce((obj,product) => ({
+    ...obj,
+    [product.id]:product
+}),{})
+
 
 const Cart = ({
     productsInCart
