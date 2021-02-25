@@ -10,7 +10,6 @@ import Cart from './Cart/Cart'
 const Header = ({
 
     productsInCart
-
 }) => {
     return (
         <header className="header">

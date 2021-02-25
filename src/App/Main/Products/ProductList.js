@@ -3,7 +3,7 @@ import ProductListItem from './ProductListItem'
 import products from './products'
 
 const ProductList = ({
-    productsInCart
+    addProductToCart
 }) => {
     return (
         <>
@@ -21,14 +21,14 @@ const ProductList = ({
                     }) => {
                         return (                
                             <ProductListItem
-                                key={id}
+                                id={id}
                                 image={image}
                                 name={name}
                                 description={description}
                                 type={type}
                                 cepacity={cepacity}
                                 price={price}
-                                productsInCart={productsInCart}
+                                addProductToCart={addProductToCart}
                             />
                         )
                     })

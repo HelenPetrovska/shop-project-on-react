@@ -18,23 +18,23 @@ class App extends Component {
 
     }
 
-    // addProductToCart = (count, price,id,countId) => {
-    //     this.setState((prevState) => ({
-    //         productsInCart: {
-    //             id:id,
-    //             countId:prevState.productsInCart.countId+countId,
-    //         }
-    //     }))
-    // }
+    addProductToCart = (id,count) => {
+        this.setState((prevState) => ({
+            productsInCart: Object.assign({},prevState.productsInCart,{
+                [id]: prevState.productsInCart[id] + count
+            })
+        }))
+    }
+    
     
     render() {
         return (
             <>
                 <Header
-                    productsInCart={this.state.productsInCart}    
+                    productsInCart={this.state.productsInCart}
                 />
                 <Main 
-                    productsInCart = {this.state.productsInCart}
+                    addProductToCart = {this.addProductToCart}
                 />
                 <Footer/>
             </>
