@@ -21,6 +21,7 @@ const ProductList = ({
                     }) => {
                         return (                
                             <ProductListItem
+                                key={id}
                                 id={id}
                                 image={image}
                                 name={name}
