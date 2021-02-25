@@ -17,7 +17,7 @@ const Cart = ({
         <div className="cart text-center">
             {
                 keys(productsInCart).map((productId) => (
-                    <div key = {productId}>{products[productId-1].name}: {productsInCart[productId]}</div>
+                    <div key = {productId}>{productsObject[productId].name}: {productsInCart[productId]}</div>
                 ))
             }
         </div>
