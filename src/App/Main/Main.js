@@ -1,4 +1,6 @@
 import React from 'react'
+import { Route } from 'react-router'
+import CartPage from './CartPage/CartPage'
 
 import ProductList from './Products/ProductList'
 
@@ -13,9 +15,12 @@ const Main = ({
                         Filter
                     </div>
                     <div className="main-content">
-                        <ProductList
+                        <Route path="/" exact render={()=> (
+                            <ProductList
                             addProductToCart={addProductToCart}         
-                        />
+                            />
+                        )}/>
+                        <Route path="/cart" component={CartPage}/>
                     </div>
                 </div>
             </div>
