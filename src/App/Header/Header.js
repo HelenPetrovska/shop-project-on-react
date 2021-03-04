@@ -15,7 +15,6 @@ const Header = ({
         <header className="header">
             <div className="container">
                 <div className="header-row">
-
                     <Logo/>
                     <Menu/>
                     <Cart
