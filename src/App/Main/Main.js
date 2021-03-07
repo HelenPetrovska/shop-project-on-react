@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router'
+import { Route } from 'react-router-dom'
 import CartPage from './CartPage/CartPage'
 import Payment from './Payment/Payment'
 import Shipping from './Shipping/Shipping'
