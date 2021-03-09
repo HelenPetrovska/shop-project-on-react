@@ -5,6 +5,7 @@ import CartProductListItem from './CartProductListItem'
 
 const CartProductList = ({
     productsInCart,
+    removeProductFromCart,
     productsObject=getProductsObject(products),
     CartItem = CartProductListItem
 }) => {
@@ -16,6 +17,7 @@ const CartProductList = ({
                         key = {productId}
                         product={productsObject[productId]}
                         productCount={productsInCart[productId]}
+                        removeProductFromCart={removeProductFromCart}
                     />
                 ))
             }

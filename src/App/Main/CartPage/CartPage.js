@@ -1,10 +1,11 @@
 import React from 'react'
 import CartTotal from '../../../Components/Cart/CartTotal'
 import CartProductList from '../../../Components/Cart/CartProductList'
-import CartProductListItemExtended from '../../../Components/Cart/CartProductListUtemExtended'
+import CartProductListItemExtended from '../../../Components/Cart/CartProductListItemExtended'
 
 const CartPage = ({
     productsInCart,
+    removeProductFromCart
 }) => {
     return (
         <>
@@ -12,6 +13,7 @@ const CartPage = ({
             <CartProductList
                 productsInCart={productsInCart}
                 CartItem={CartProductListItemExtended}
+                removeProductFromCart={removeProductFromCart}
             />
             <CartTotal
                 productsInCart={productsInCart}
