@@ -10,7 +10,8 @@ import ProductList from './Products/ProductList'
 const Main = ({
     addProductToCart,
     removeProductFromCart,
-    productsInCart
+    productsInCart,
+    changeProductQuantity
 }) => {
     return (
         <main className="main">
@@ -29,6 +30,7 @@ const Main = ({
                             <CartPage
                             productsInCart={productsInCart}
                             removeProductFromCart={removeProductFromCart}
+                            changeProductQuantity={changeProductQuantity}
                             />
                         )}/>
                         <Route path="/payment" component={Payment}/>

@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 import "./ProductListItem.css"
 import PropTypes from 'prop-types'
+import Quantity from '../../../Components/Quantity/Quantity'
 
 class ProductListItem extends Component {
     state = {
         productCount:1,
     }
 
-    onIncrementClick() {
+    onIncrementClick = () => {
         this.setState((prevState) => ({
             productCount:prevState.productCount + 1,
         }))
     }
 
-    onDecrementClick() {
+    onDecrementClick = () => {
         this.setState((prevState) => ({
             productCount:prevState.productCount - 1,
         }))
@@ -40,18 +41,12 @@ class ProductListItem extends Component {
                 <div className="product-description">{description}</div>
                 <div className="product-features">Type: {type}</div>
                 <div className="product-features">Cepacity: {cepacity} Gb</div>
-                <div className="product-quantity">
-                    <button
-                    disabled={this.state.productCount <= 1 }
-                        onClick={() => this.onDecrementClick()}
-                    >-</button>
-                    <input type="text" value={this.state.productCount} readOnly/>
-                    <button 
-                        disabled={this.state.productCount >= 5 }
-
-                        onClick={() => this.onIncrementClick()}
-                    >+</button>
-                </div>
+                <Quantity
+                    productCount={this.state.productCount}
+                    onDecrementClick={this.onDecrementClick}
+                    onIncrementClick={this.onIncrementClick}
+                    minCount={1}
+                />
                 <div className="product-price">{price}$</div>
                 <button 
                     className="btn-add-to-cart"
