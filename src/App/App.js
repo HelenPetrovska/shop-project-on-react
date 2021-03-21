@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {omit} from 'lodash'
 
 import "../common/style/reset.css"
 import "../common/style/base.css"
