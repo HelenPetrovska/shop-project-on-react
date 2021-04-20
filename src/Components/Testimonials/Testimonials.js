@@ -2,27 +2,68 @@ import React, { useState } from 'react'
 
 const Testimonials = () => {
 
-    const [count, setCount] = useState(1)
+    const arrTestimonials = [
+        {name:"Jack", text:"Купил телефон, все ок"},
+        {name:"Lyda", text:"Нормально"}
+    ]
 
-    const [color, setColor] = useState("green")
+    const [newTestimonials, setNewTestimonials] = useState({
+        name:"",
+        text:""
+    })
 
-    const toggleColor = () => {
-        setColor((value) => (
-            value === "green" ? "red" : "green"
-        ))
+    const handleNameChange = (e) => {
+        setNewTestimonials((value) => ({
+            ...value,
+            name:e.target.value
+        }))
     }
+
+    const handleTextChange = (e) => {
+        setNewTestimonials((value) => ({
+            ...value,
+            text:e.target.value
+        }))
+    }
+
 
     return (
         <>
             <h1 className="page-title">Testimonials</h1>
 
-            <div>
-                color:{color}
-            </div>
-            <button onClick={() => toggleColor()}>Change color</button>
-            <button onClick={() => setCount(count-1)}>-</button>
-            <input type="text" value={count}/>
-            <button onClick={() => setCount(count+1)}>+</button>
+            {
+              arrTestimonials.map((item) => (
+                  <div style={{
+                      backgroundColor:"rgba(255,255,255,0.75)",
+                      padding:"10px"
+                  }}>
+                        <div style={{marginBottom:"10px"}}>Name: {item.name}</div>
+                        <div style={{marginBottom:"10px"}}>Message: {item.text}</div>
+
+                  </div>
+              ))  
+            }
+
+            <form style={{marginTop:"40px"}}>
+                <div>
+                    <input 
+                        type="text" 
+                        placeholder="your name"
+                        value={newTestimonials.name}
+                        onChange={handleNameChange}
+                    />
+                </div>
+                <div>
+                    <textarea 
+                        cols="30" 
+                        rows="10" 
+                        placeholder="your message"
+                        value={newTestimonials.text}
+                        onChange={handleTextChange}
+                    ></textarea>
+                </div>
+                <button>leave a comment</button>
+            </form>
         </>
     )
 }
