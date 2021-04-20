@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Testimonials = () => {
+
+    const [count, setCount] = useState(1)
+
     return (
         <>
-            <div className="page-title">Testimonials</div>
-            <button>-</button>
-            <input type="text" value="1 "/>
-            <button>+</button>
+            <h1 className="page-title">Testimonials</h1>
+            <button onClick={() => setCount(count-1)}>-</button>
+            <input type="text" value={count}/>
+            <button onClick={() => setCount(count+1)}>+</button>
         </>
     )
 }

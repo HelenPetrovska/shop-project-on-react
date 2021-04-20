@@ -27,9 +27,9 @@ class App extends Component {
         }))
     }
     
-    removeProductFromCart = (productId) => {
+    removeProductFromCart = (postId) => {
         this.setState((prevState) => ({
-            productsInCart:omit(prevState.productsInCart,[productId])
+            productsInCart:omit(prevState.productsInCart,[postId])
         }))
     }
 
