@@ -3,7 +3,10 @@ import ProductListItem from './ProductListItem'
 import products from './products'
 
 const ProductList = ({
-    addProductToCart
+    addProductToCart,
+    addLike,
+    removeLike,
+    likeState
 }) => {
     return (
         <>
@@ -30,6 +33,9 @@ const ProductList = ({
                                 cepacity={cepacity}
                                 price={price}
                                 addProductToCart={addProductToCart}
+                                addLike={addLike}
+                                removeLike={removeLike}
+                                isLiked={likeState[id]}
                             />
                         )
                     })

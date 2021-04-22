@@ -20,6 +20,22 @@ class ProductListItem extends Component {
         }))
     }
 
+    changeLikeState = () => {
+        const {
+            id,
+            addLike,
+            removeLike,
+            isLiked
+        } = this.props;
+
+        if(isLiked) {
+            removeLike(id)
+        } else {
+            addLike(id)
+        }
+    }
+
+
     render() {
         const {
             id,
@@ -29,14 +45,18 @@ class ProductListItem extends Component {
             type,
             cepacity,
             price,
-            addProductToCart
-        } = this.props;
+            addProductToCart,
+            isLiked
+} = this.props;
 
         return (
             <div className="product-list-item">
                 <div className="product-img">
                     <img src={image} alt="product-img"/>
                 </div>
+                <button onClick={() => this.changeLikeState(id)}>
+                    {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
+                </button>
                 <div className="product-title">{name}</div>
                 <div className="product-description">{description}</div>
                 <div className="product-features">Type: {type}</div>
