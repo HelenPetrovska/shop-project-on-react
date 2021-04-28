@@ -31,7 +31,9 @@ class ProductListItem extends Component {
             cepacity,
             price,
             addProductToCart,
-            isLiked
+            isLiked,
+            addLike,
+            removeLike,
         } = this.props;
 
         return (
@@ -39,7 +41,7 @@ class ProductListItem extends Component {
                 <div className="product-img">
                     <img src={image} alt="product-img"/>
                 </div>
-                <button>
+                <button onClick = {() => isLiked ? removeLike(id) : addLike(id)}>
                     {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
                 </button>
                 <div className="product-title">{name}</div>
@@ -80,8 +82,20 @@ const mapState = (state,{id}) => ({
     isLiked:state[id]
 })
 
+const mapDispatch = dispatch => ({
+    addLike:(id) => dispatch({
+        type:"LIKE",
+        id
+    }),
+    removeLike:(id) => dispatch({
+        type:"DISLIKE",
+        id
+    })
+})
+
 
 export default connect(
-    mapState
+    mapState,
+    mapDispatch
 
 )(ProductListItem)
