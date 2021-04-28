@@ -79,7 +79,7 @@ ProductListItem.defaultProps = {
 }
 
 const mapState = (state,{id}) => ({
-    isLiked:state[id]
+    isLiked:state.productsLikeState[id]
 })
 
 const mapDispatch = dispatch => ({

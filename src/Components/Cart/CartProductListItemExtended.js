@@ -53,7 +53,7 @@ const CartProductListItemExtended = ({
 )
 
 const mapState = (state,{product}) => ({
-    isLiked:state[product.id]
+    isLiked:state.productsLikeState[product.id]
 })
 
 export default connect(
