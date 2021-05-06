@@ -79,7 +79,8 @@ ProductListItem.defaultProps = {
 }
 
 const mapState = (state,{id}) => ({
-    isLiked:state.productsLikeState[id]
+    isLiked:state.productsLikeState[id],
+    productsInCart:state.productsInCart[id],
 })
 
 const mapDispatch = dispatch => ({
@@ -90,6 +91,11 @@ const mapDispatch = dispatch => ({
     removeLike:(id) => dispatch({
         type:"DISLIKE",
         id
+    }),
+    addProductToCart:(id,count) => dispatch({
+        type:"ADD_PRODUCT_TO_CART",
+        id,
+        count,
     })
 })
 
