@@ -45,8 +45,8 @@ const Testimonials = () => {
             <h1 className="page-title">Testimonials</h1>
 
             {
-              testimonials.map((item) => (
-                  <div style={{
+              testimonials.map((item,i) => (
+                  <div key={i} style={{
                       backgroundColor:"rgba(255,255,255,0.75)",
                       padding:"10px"
                   }}>
