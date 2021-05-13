@@ -2,6 +2,7 @@ import React from 'react'
 import CartTotal from '../../../Components/Cart/CartTotal'
 import CartProductList from '../../../Components/Cart/CartProductList'
 import CartProductListItemExtended from '../../../Components/Cart/CartProductListItemExtended'
+import { Link } from 'react-router-dom'
 
 const CartPage = ({
     productsInCart,
@@ -23,6 +24,7 @@ const CartPage = ({
             <CartTotal
                 productsInCart={productsInCart}
             />
+            <Link to="/checkout">Proceed to checkout</Link>
         </>
     )
 }
