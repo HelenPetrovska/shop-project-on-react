@@ -19,7 +19,6 @@ const CartPage = ({
                 removeProductFromCart={removeProductFromCart}
                 changeProductQuantity={changeProductQuantity}
                 products = {products}
-
             />
             <CartTotal
                 productsInCart={productsInCart}

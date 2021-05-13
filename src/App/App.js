@@ -13,10 +13,7 @@ class App extends Component {
 
     state = {
 
-        productsInCart: {
-            1:3,
-            2:5,
-        },
+        productsInCart: {},
         products:[]
     }
 
@@ -60,11 +57,11 @@ class App extends Component {
                     products = {this.state.products}
                 />
                 <Main 
-                    products = {this.state.products}
                     addProductToCart = {this.addProductToCart}
                     productsInCart={this.state.productsInCart}
                     removeProductFromCart={this.removeProductFromCart}
                     changeProductQuantity={this.changeProductQuantity}
+                    products = {this.state.products}
                 />
                 <Footer/>
             </>

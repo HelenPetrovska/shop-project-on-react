@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 import ProductListItem from './ProductListItem'
-// import products from './products'
 
 const ProductList = ({
     addProductToCart,
-    products
 }) => {
+
+    const [products,setProducts] = useState([])
+
+    const productsData = () => {
+        axios.get("https://run.mocky.io/v3/ea7b7859-1a85-421a-b5df-cd143774ded6")
+        .then(res => res.data)
+        .then(data => {
+            setProducts(data.products)
+        })
+    }
+
+    productsData()
+
     return (
         <>
             <h1 className="page-title">Product List</h1>
@@ -16,7 +28,7 @@ const ProductList = ({
                         name,
                         description,
                         price,
-                        cepacity,
+                        capacity,
                         type,
                         image,
                     }) => {
@@ -28,7 +40,7 @@ const ProductList = ({
                                 name={name}
                                 description={description}
                                 type={type}
-                                cepacity={cepacity}
+                                capacity={capacity}
                                 price={price}
                                 addProductToCart={addProductToCart}
                             />

@@ -10,11 +10,11 @@ import Testimonials from '../../Components/Testimonials/Testimonials'
 import CheckoutPage from './CheckoutPage/CheckoutPage'
 
 const Main = ({
+    products,
     addProductToCart,
     removeProductFromCart,
     productsInCart,
     changeProductQuantity,
-    products
 }) => {
     return (
         <main className="main">
@@ -27,16 +27,14 @@ const Main = ({
                         <Route path="/" exact render={()=> (
                             <ProductList
                             addProductToCart={addProductToCart}
-                            products={products}         
                             />
                         )}/>
                         <Route path="/cart" render={() => (
                             <CartPage
+                            products={products}
                             productsInCart={productsInCart}
                             removeProductFromCart={removeProductFromCart}
                             changeProductQuantity={changeProductQuantity}
-                            products = {products}
-
                             />
                         )}/>
                         <Route path="/payment" component={Payment}/>
