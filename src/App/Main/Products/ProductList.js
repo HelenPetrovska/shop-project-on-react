@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import ProductListItem from './ProductListItem'
 
@@ -8,15 +8,13 @@ const ProductList = ({
 
     const [products,setProducts] = useState([])
 
-    const productsData = () => {
+    useEffect(() => {
         axios.get("https://run.mocky.io/v3/ea7b7859-1a85-421a-b5df-cd143774ded6")
         .then(res => res.data)
         .then(data => {
             setProducts(data.products)
         })
-    }
-
-    productsData()
+    })
 
     return (
         <>
