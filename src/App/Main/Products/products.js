@@ -6,7 +6,7 @@ const products = [
         type:"phone",
         cepacity:64,
         price:1000,
-        image:"/images/ipad.png"
+        image:"images/ipad.png"
     },
     {
         id:2,
@@ -15,7 +15,7 @@ const products = [
         type:"phone",
         cepacity:256,
         price:1500,
-        image:"/images/iphone.png"
+        image:"images/iphone.png"
 
     },
     {
@@ -25,7 +25,7 @@ const products = [
         type:"phone",
         cepacity:128,
         price:2000,
-        image:"/images/ipad.png"
+        image:"images/ipad.png"
 
     },
     {
@@ -35,7 +35,7 @@ const products = [
         type:"phone",
         cepacity:64,
         price:1000,
-        image:"/images/ipad.png"
+        image:"images/ipad.png"
 
     },
 ]
