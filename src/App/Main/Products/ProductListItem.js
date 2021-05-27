@@ -21,6 +21,22 @@ class ProductListItem extends Component {
         }))
     }
 
+    changeLikeState = () => {
+        const {
+            id,
+            addLike,
+            removeLike,
+            isLiked
+        } = this.props;
+
+        if(isLiked) {
+            removeLike(id)
+        } else {
+            addLike(id)
+        }
+    }
+
+
     render() {
         const {
             id,
