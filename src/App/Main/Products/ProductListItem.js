@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import "./ProductListItem.css"
 import PropTypes from 'prop-types'
 import Quantity from '../../../Components/Quantity/Quantity'
+import { connect } from 'react-redux'
 
 class ProductListItem extends Component {
     state = {
@@ -29,7 +30,10 @@ class ProductListItem extends Component {
             type,
             cepacity,
             price,
-            addProductToCart
+            addProductToCart,
+            isLiked,
+            addLike,
+            removeLike,
         } = this.props;
 
         return (
@@ -37,6 +41,9 @@ class ProductListItem extends Component {
                 <div className="product-img">
                     <img src={image} alt="product-img"/>
                 </div>
+                <button onClick = {() => isLiked ? removeLike(id) : addLike(id)}>
+                    {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
+                </button>
                 <div className="product-title">{name}</div>
                 <div className="product-description">{description}</div>
                 <div className="product-features">Type: {type}</div>
@@ -71,4 +78,30 @@ ProductListItem.defaultProps = {
     image:"/images/no-image.png"
 }
 
-export default ProductListItem
+const mapState = (state,{id}) => ({
+    isLiked:state.productsLikeState[id],
+    productsInCart:state.productsInCart[id],
+})
+
+const mapDispatch = dispatch => ({
+    addLike:(id) => dispatch({
+        type:"LIKE",
+        id
+    }),
+    removeLike:(id) => dispatch({
+        type:"DISLIKE",
+        id
+    }),
+    addProductToCart:(id,count) => dispatch({
+        type:"ADD_PRODUCT_TO_CART",
+        id,
+        count,
+    })
+})
+
+
+export default connect(
+    mapState,
+    mapDispatch
+
+)(ProductListItem)
