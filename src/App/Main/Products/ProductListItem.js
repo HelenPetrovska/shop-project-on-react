@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
-import "./ProductListItem.css"
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+
+
+import "./ProductListItem.css"
 import Quantity from '../../../Components/Quantity/Quantity'
 import { connect } from 'react-redux'
 
@@ -60,7 +63,9 @@ class ProductListItem extends Component {
                 <button onClick = {() => isLiked ? removeLike(id) : addLike(id)}>
                     {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
                 </button>
-                <div className="product-title">{name}</div>
+                <Link to={`/products/${id}`}>
+                    <div className="product-title">{name}</div>
+                </Link>
                 <div className="product-description">{description}</div>
                 <div className="product-features">Type: {type}</div>
                 <div className="product-features">Cepacity: {cepacity} Gb</div>
