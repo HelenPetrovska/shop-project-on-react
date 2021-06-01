@@ -11,13 +11,13 @@ const ProductList = () => {
                     products.map(({
                         id,
                         name,
+                        image,
                         description,
                         price,
                         cepacity,
-                        type,
-                        image,
+                        type
                     }) => {
-                        return (                
+                        return (
                             <ProductListItem
                                 key={id}
                                 id={id}
