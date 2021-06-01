@@ -19,7 +19,7 @@
     "redux": "^4.0.5",
     "web-vitals": "^0.2.4"
   },
-  "homepage": "https://helenpetrovska.github.io/shop-project-on-react",
+  "homepage": "https://helenpetrovska.github.io/shop-project-on-react/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

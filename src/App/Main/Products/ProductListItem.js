@@ -94,7 +94,7 @@ ProductListItem.propTypes = {
 
 ProductListItem.defaultProps = {
     description:"No description...",
-    image:"/images/no-image.png"
+    image:"/images/no-image.jpg"
 }
 
 const mapState = (state,{id}) => ({

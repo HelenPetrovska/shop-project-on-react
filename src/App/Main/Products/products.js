@@ -7,7 +7,7 @@ const products = [
         cepacity:64,
         price:1000,
         fullDescription:"<div class='red'>Description</div>",
-        image:"./images/latest1.jpg"
+        image:"./images/device1.png"
     },
     {
         id:2,
@@ -16,6 +16,7 @@ const products = [
         type:"phone",
         cepacity:256,
         price:1500,
+        image:"./images/device2.png"
     },
     {
         id:3,
@@ -24,6 +25,7 @@ const products = [
         type:"phone",
         cepacity:128,
         price:2000,
+        image:"./images/device1.png"
     },
     {
         id:4,
@@ -32,6 +34,7 @@ const products = [
         type:"phone",
         cepacity:64,
         price:1000,
+        image:"./images/device2.png"
     },
 ]
 
