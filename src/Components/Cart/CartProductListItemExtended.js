@@ -9,7 +9,9 @@ const CartProductListItemExtended = ({
     productCount,
     removeProductFromCart,
     changeProductQuantity,
-    isLiked
+    isLiked,
+    addLike,
+    removeLike,
     
 }) => (
        
@@ -22,7 +24,7 @@ const CartProductListItemExtended = ({
                     <p className="cart-extended-name">
                         <span> {product.name} </span> 
                     </p>
-                    <button>
+                    <button onClick = {() => (isLiked ? removeLike(product.id) : addLike(product.id))}>
                         {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
                     </button>
                     <p className="cart-extended-price">
@@ -65,8 +67,15 @@ const mapDispatch = dispatch => ({
         type:"CHANGE_PRODUCT_QUANTITY",
         id,
         count,
-
-    })
+    }),
+    addLike:(id) => dispatch({
+        type:"LIKE",
+        id
+    }),
+    removeLike:(id) => dispatch({
+        type:"DISLIKE",
+        id
+    }),
 })
 
 export default connect(

@@ -1,17 +1,21 @@
 import React from 'react'
 import products, { getProductsObject } from '../Products/products'
+import { connect } from 'react-redux'
 
 import Testimonials from '../../../Components/Testimonials/Testimonials'
 
-
-
+import "./productPage.css"
 
 const ProductPage = ({
     match,
-    productsObject = getProductsObject(products) 
+    productsObject = getProductsObject(products),
+    addLike,
+    removeLike,
+    isLiked
 }) => {
 
     const id = match.params.id
+    console.log(isLiked)
     return (
         <>
             <div className="page-title">{productsObject[id].name}</div>
@@ -20,9 +24,9 @@ const ProductPage = ({
                     <img src={productsObject[id].image} alt="product-img"/>
                 </div>
 
-                {/* <button onClick = {() => isLiked ? removeLike(id) : addLike(id)}>
+                <button onClick = {() => (isLiked ? removeLike(productsObject[id].id) : addLike(productsObject[id].id))}>
                     {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
-                </button> */}
+                </button>
                 
                 <div className="product-title">{productsObject[id].name}</div>
                 
@@ -52,5 +56,30 @@ const ProductPage = ({
         </>
     )
 }
+const mapState = (state,{id}) => ({
+    isLiked:state.productsLikeState[id]
+    // productsInCart:state.productsInCart[id],
+})
 
-export default ProductPage
+const mapDispatch = dispatch => ({
+    addLike:(id) => dispatch({
+        type:"LIKE",
+        id
+    }),
+    removeLike:(id) => dispatch({
+        type:"DISLIKE",
+        id
+    })
+    // addProductToCart:(id,count) => dispatch({
+    //     type:"ADD_PRODUCT_TO_CART",
+    //     id,
+    //     count,
+    // })
+})
+
+
+export default connect(
+    mapState,
+    mapDispatch
+
+)(ProductPage)
