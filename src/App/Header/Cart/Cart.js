@@ -9,7 +9,6 @@ import CartProductList from '../../../Components/Cart/CartProductList'
 const Cart = ({
     productsInCart,
 }) => {
-    console.log(productsInCart)
     return (
         <div className="cart text-center">
             <CartTotal

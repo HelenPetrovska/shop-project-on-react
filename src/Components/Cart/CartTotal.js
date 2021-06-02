@@ -9,6 +9,7 @@ const CartTotal = ({
     productsObject=getProductsObject(products)
 }
 ) => {
+    
     return (
         <div>
             Total ({Object.values(productsInCart).reduce((a, b) => a + b)}) : {
