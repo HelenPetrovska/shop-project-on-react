@@ -10,7 +10,8 @@ import './cartPage.css'
 const CartPage = ({
     productsInCart,
     removeProductFromCart,
-    changeProductQuantity
+    changeProductQuantity,
+    products
 }) => {
     return (
         <>
@@ -20,6 +21,7 @@ const CartPage = ({
                 CartItem={CartProductListItemExtended}
                 removeProductFromCart={removeProductFromCart}
                 changeProductQuantity={changeProductQuantity}
+                products = {products}
             />
             <div className="cart-total">
                 <CartTotal

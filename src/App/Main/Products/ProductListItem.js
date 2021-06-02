@@ -45,7 +45,7 @@ class ProductListItem extends Component {
             name,
             description,
             type,
-            cepacity,
+            capacity,
             price,
             addProductToCart,
             isLiked,
@@ -66,7 +66,7 @@ class ProductListItem extends Component {
                 </Link>
                 <div className="product-description">{description}</div>
                 <div className="product-features">Type: {type}</div>
-                <div className="product-features">Cepacity: {cepacity} Gb</div>
+                <div className="product-features">Cepacity: {capacity} Gb</div>
                 <Quantity
                     productCount={this.state.productCount}
                     onDecrementClick={this.onDecrementClick}
@@ -87,7 +87,7 @@ ProductListItem.propTypes = {
     name:PropTypes.string.isRequired,
     description:PropTypes.string,
     type:PropTypes.string.isRequired,
-    cepacity:PropTypes.number.isRequired,    
+    capacity:PropTypes.number.isRequired,    
     price:PropTypes.number.isRequired,
     image:PropTypes.string,
 }

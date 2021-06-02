@@ -46,8 +46,12 @@ const Testimonials = () => {
 
             {
               testimonials.map((item,i) => (
+<<<<<<< HEAD
                   <div key={i}
                     style={{
+=======
+                  <div key={i} style={{
+>>>>>>> server-hooks
                       backgroundColor:"rgba(255,255,255,0.75)",
                       padding:"10px"
                   }}>

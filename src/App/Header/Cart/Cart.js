@@ -8,6 +8,7 @@ import CartProductList from '../../../Components/Cart/CartProductList'
 
 const Cart = ({
     productsInCart,
+    products
 }) => {
     return (
         <div className="cart text-center">
