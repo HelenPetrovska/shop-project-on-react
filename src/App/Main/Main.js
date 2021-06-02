@@ -7,6 +7,7 @@ import Shipping from './Shipping/Shipping'
 
 import ProductList from './Products/ProductList'
 import ProductPage from './ProductPage/ProductPage'
+import CheckoutPage from './CheckoutPage/CheckoutPage'
 
 const Main = () => {
     return (
@@ -21,6 +22,7 @@ const Main = () => {
                         <Route path="/payment" component={Payment}/>
                         <Route path="/shipping" component={Shipping}/>
                         <Route path="/products/:id" component={ProductPage}/>
+                        <Route path="/checkout" component={CheckoutPage}/>
                     </div>
                 </div>
             </div>
