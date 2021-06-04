@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import "./testimonials.css"
+
 const Testimonials = () => {
 
     const arrTestimonials = [
@@ -46,14 +48,12 @@ const Testimonials = () => {
 
             {
               testimonials.map((item,i) => (
-<<<<<<< HEAD
                   <div key={i}
                     style={{
-=======
-                  <div key={i} style={{
->>>>>>> server-hooks
                       backgroundColor:"rgba(255,255,255,0.75)",
-                      padding:"10px"
+                      padding:"10px",
+                      borderRadius:"10px",
+                      marginBottom:"15px"
                   }}>
                         <div style={{marginBottom:"10px"}}>Name: {item.name}</div>
                         <div style={{marginBottom:"10px"}}>Message: {item.text}</div>
@@ -62,8 +62,8 @@ const Testimonials = () => {
               ))  
             }
 
-            <form onSubmit={sendForm} style={{marginTop:"40px"}}>
-                <div>
+            <form onSubmit={sendForm} style={{marginTop:"40px"}} className="testimonials-form">
+                <div className="testimonials-input">
                     <input 
                         type="text" 
                         placeholder="your name"
@@ -71,16 +71,18 @@ const Testimonials = () => {
                         onChange={handleNameChange}
                     />
                 </div>
-                <div>
+                <div className="testimonials-input">
                     <textarea 
                         cols="30" 
-                        rows="10" 
+                        rows="5" 
                         placeholder="your message"
                         value={newTestimonials.text}
                         onChange={handleTextChange}
                     ></textarea>
                 </div>
-                <button>leave a comment</button>
+                <div className="testimonials-button">
+                    <button className="testimonials-btn">Leave a comment</button>
+                </div>
             </form>
         </>
     )

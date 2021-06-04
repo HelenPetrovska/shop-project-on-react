@@ -67,3 +67,7 @@
     color: #ffffff;
     cursor: pointer;
 }
+.product-like {
+    display: flex;
+    justify-content: flex-end;
+}

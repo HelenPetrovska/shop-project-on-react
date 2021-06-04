@@ -24,9 +24,11 @@ const CartProductListItemExtended = ({
                     <p className="cart-extended-name">
                         <span> {product.name} </span> 
                     </p>
-                    <button onClick = {() => (isLiked ? removeLike(product.id) : addLike(product.id))}>
-                        {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
-                    </button>
+                    <div className="cart-like-button">
+                        <button onClick = {() => (isLiked ? removeLike(product.id) : addLike(product.id))} className="cart-like-btn">
+                            {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
+                        </button>
+                    </div>
                     <p className="cart-extended-price">
                          Price for one item: <span className="bold">$ {product.price} </span> 
                     </p>

@@ -15,7 +15,6 @@ const ProductPage = ({
 }) => {
 
     const id = match.params.id
-    console.log(isLiked)
     return (
         <>
             <div className="page-title">{productsObject[id].name}</div>
@@ -23,11 +22,11 @@ const ProductPage = ({
                 <div className="product-img">
                     <img src={productsObject[id].image} alt="product-img"/>
                 </div>
-
-                <button onClick = {() => (isLiked ? removeLike(productsObject[id].id) : addLike(productsObject[id].id))}>
-                    {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
-                </button>
-                
+                <div className="product-like">
+                    <button onClick = {() => (isLiked ? removeLike(productsObject[id].id) : addLike(productsObject[id].id))}>
+                        {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
+                    </button>
+                </div>
                 <div className="product-title">{productsObject[id].name}</div>
                 
                 <div className="product-description">{productsObject[id].description}</div>

@@ -4,7 +4,6 @@ import products, { getProductsObject } from '../../App/Main/Products/products'
 import CartProductListItem from './CartProductListItem'
 
 const CartProductList = ({
-    products,
     productsInCart,
     removeProductFromCart,
     productsObject=getProductsObject(products),

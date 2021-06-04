@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React from 'react'
 import ProductListItem from './ProductListItem'
+import products from './products'
 
 const ProductList = () => {
     return (
@@ -25,7 +25,7 @@ const ProductList = () => {
                                 name={name}
                                 description={description}
                                 type={type}
-                                capacity={capacity}
+                                cepacity={cepacity}
                                 price={price}
                             />
                         )

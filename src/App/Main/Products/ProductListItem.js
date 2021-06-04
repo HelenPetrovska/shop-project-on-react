@@ -45,7 +45,7 @@ class ProductListItem extends Component {
             name,
             description,
             type,
-            capacity,
+            cepacity,
             price,
             addProductToCart,
             isLiked,
@@ -58,15 +58,17 @@ class ProductListItem extends Component {
                 <div className="product-img">
                     <Link to={`/products/${id}`}><img src={image} alt="product-img"/></Link>
                 </div>
-                <button onClick = {() => isLiked ? removeLike(id) : addLike(id)}>
-                    {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
-                </button>
+                <div className="product-like">
+                    <button onClick = {() => isLiked ? removeLike(id) : addLike(id)}>
+                        {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
+                    </button>
+                </div>
                 <Link to={`/products/${id}`}>
                     <div className="product-title">{name}</div>
                 </Link>
                 <div className="product-description">{description}</div>
                 <div className="product-features">Type: {type}</div>
-                <div className="product-features">Cepacity: {capacity} Gb</div>
+                <div className="product-features">Cepacity: {cepacity} Gb</div>
                 <Quantity
                     productCount={this.state.productCount}
                     onDecrementClick={this.onDecrementClick}

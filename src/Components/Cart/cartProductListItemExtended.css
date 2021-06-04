@@ -44,3 +44,11 @@
     flex: 0 0 75%;
     max-width: 75%;
 }
+.cart-like-button {
+    display: flex;
+    justify-content: flex-end;
+}
+.cart-like-btn {
+    width: 25px;
+    height: 25px;
+}

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
+import './checkoutPage.css'
+
 const CheckoutPage = () => {
 
     const [name,setName] = useState("")
@@ -35,8 +37,8 @@ const CheckoutPage = () => {
 
     const renderForm = () => {
         return (
-            <form onSubmit={sendForm}>
-                <div>
+            <form onSubmit={sendForm} className="checkout-form">
+                <div className="checkout-input">
                     <input 
                     type="text"
                     placeholder="Your name"
@@ -44,12 +46,13 @@ const CheckoutPage = () => {
                     onChange={orderName}
                     />
                 </div>
-                <div>
+                <div className="checkout-input">
                     <input 
                     type="text"
                     placeholder="Your address"
                     value={address}
                     onChange={orderAddress}
+                    className=""
                     />
                 </div>
                 <button type="submit">Send</button>
@@ -59,7 +62,7 @@ const CheckoutPage = () => {
     
     const renderMessage = () => {
         return (
-            <div>
+            <div className="checkout-message">
                 Dear {name}, thanks for your order! <br/>
                 Address: {address}
             </div>
