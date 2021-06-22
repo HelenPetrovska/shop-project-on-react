@@ -59,7 +59,7 @@ class ProductListItem extends Component {
                     <Link to={`/products/${id}`}><img src={image} alt="product-img"/></Link>
                 </div>
                 <div className="product-like">
-                    <button onClick = {() => isLiked ? removeLike(id) : addLike(id)}>
+                    <button className="like-btn" onClick = {() => isLiked ? removeLike(id) : addLike(id)}>
                         {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
                     </button>
                 </div>

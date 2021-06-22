@@ -71,3 +71,7 @@
     display: flex;
     justify-content: flex-end;
 }
+.like-btn {
+    width: 25px;
+    height: 25px;
+}
