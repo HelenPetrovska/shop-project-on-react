@@ -6,21 +6,6 @@ import Quantity from '../../../Components/Quantity/Quantity'
 import { connect } from 'react-redux'
 
 class ProductListItem extends Component {
-    state = {
-        productCount:1,
-    }
-
-    onIncrementClick = () => {
-        this.setState((prevState) => ({
-            productCount:prevState.productCount + 1,
-        }))
-    }
-
-    onDecrementClick = () => {
-        this.setState((prevState) => ({
-            productCount:prevState.productCount - 1,
-        }))
-    }
 
     changeLikeState = () => {
         const {
@@ -36,8 +21,6 @@ class ProductListItem extends Component {
             addLike(id)
         }
     }
-
-
     render() {
         const {
             id,
@@ -51,7 +34,12 @@ class ProductListItem extends Component {
             isLiked,
             addLike,
             removeLike,
+            productCount=1,
+            onIncrementClick,
+            onDecrementClick
         } = this.props;
+
+        console.log(productCount)
 
         return (
             <div className="product-list-item">
@@ -70,15 +58,16 @@ class ProductListItem extends Component {
                 <div className="product-features">Type: {type}</div>
                 <div className="product-features">Cepacity: {cepacity} Gb</div>
                 <Quantity
-                    productCount={this.state.productCount}
-                    onDecrementClick={this.onDecrementClick}
-                    onIncrementClick={this.onIncrementClick}
+                    id={id}
+                    productCount={productCount}
+                    onDecrementClick={onDecrementClick}
+                    onIncrementClick={onIncrementClick}
                     minCount={1}
                 />
                 <div className="product-price">{price}$</div>
                 <button 
                     className="btn-add-to-cart"
-                    onClick={()=> addProductToCart(id,this.state.productCount)}
+                    onClick={()=> addProductToCart(id,productCount)}
                 >Add to cart</button>
             </div>
         )
@@ -102,6 +91,7 @@ ProductListItem.defaultProps = {
 const mapState = (state,{id}) => ({
     isLiked:state.productsLikeState[id],
     productsInCart:state.productsInCart[id],
+    productCount:state.productCount[id]
 })
 
 const mapDispatch = dispatch => ({
@@ -117,7 +107,16 @@ const mapDispatch = dispatch => ({
         type:"ADD_PRODUCT_TO_CART",
         id,
         count,
-    })
+    }),
+    onIncrementClick:(id) => dispatch({
+        type:"INCREMENT_COUNT",
+        id
+    }),
+    onDecrementClick:(id) => dispatch({
+        type:"DECREMENT_COUNT",
+        id
+    }),
+
 })
 
 

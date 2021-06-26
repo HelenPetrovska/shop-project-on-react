@@ -14,7 +14,6 @@ const ProductPage = ({
             <ProductItem
                 id={id}
             />
-            <Testimonials/>
         </>
     )
 }
