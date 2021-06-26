@@ -16,7 +16,7 @@ const ProductItem = ({
     isLiked,
     productsInCart,
     addProductToCart,
-    productCount,
+    productCount=1,
     onDecrementClick,
     onIncrementClick
 }) => {
@@ -40,17 +40,18 @@ const ProductItem = ({
 
                 <div className="product-features">Type: {productsObject[id].type}</div>
                 <div className="product-features">Cepacity: {productsObject[id].cepacity} Gb</div>
-                {/* <Quantity
-                    productCount={this.state.productCount}
-                    onDecrementClick={this.onDecrementClick}
-                    onIncrementClick={this.onIncrementClick}
+                <Quantity
+                    id={productsObject[id].id}
+                    productCount={productCount}
+                    onDecrementClick={onDecrementClick}
+                    onIncrementClick={onIncrementClick}
                     minCount={1}
-                /> */}
+                />
                 <div className="product-price">{productsObject[id].price}$</div>
-                {/* <button 
+                <button 
                     className="btn-add-to-cart"
-                    onClick={()=> addProductToCart(id,this.state.productCount)}
-                >Add to cart</button> */}
+                    onClick={()=> addProductToCart(productsObject[id].id,productCount)}
+                >Add to cart</button>
             </div>
 
             {/* <div
@@ -66,6 +67,7 @@ const ProductItem = ({
 const mapState = (state,{id}) => ({
     isLiked:state.productsLikeState[id],
     productsInCart:state.productsInCart[id],
+    productCount:state.productCount[id]
 })
 
 const mapDispatch = dispatch => ({
@@ -81,7 +83,15 @@ const mapDispatch = dispatch => ({
         type:"ADD_PRODUCT_TO_CART",
         id,
         count,
-    })
+    }),
+    onIncrementClick:(id) => dispatch({
+        type:"INCREMENT_COUNT",
+        id
+    }),
+    onDecrementClick:(id) => dispatch({
+        type:"DECREMENT_COUNT",
+        id
+    }),
 })
 
 export default connect(
