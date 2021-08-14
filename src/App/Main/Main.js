@@ -16,7 +16,7 @@ const Main = () => {
                 <div className="row-main">
                     <div className="main-content">
                         <Route path="/" exact render={() =>(
-                            <ProductList/>
+                                <ProductList/>
                         )}/>
                         <Route path="/cart" component={CartPage}/>
                         <Route path="/payment" component={Payment}/>
