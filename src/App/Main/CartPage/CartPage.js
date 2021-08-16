@@ -9,9 +9,6 @@ import './cartPage.css'
 
 const CartPage = ({
     productsInCart,
-    removeProductFromCart,
-    changeProductQuantity,
-    products
 }) => {
     return (
         <>
@@ -19,9 +16,6 @@ const CartPage = ({
             <CartProductList
                 productsInCart={productsInCart}
                 CartItem={CartProductListItemExtended}
-                removeProductFromCart={removeProductFromCart}
-                changeProductQuantity={changeProductQuantity}
-                products = {products}
             />
             <div className="cart-total">
                 <CartTotal

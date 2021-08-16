@@ -9,7 +9,6 @@ import CheckoutPage from './CheckoutPage/CheckoutPage'
 
 const Main = ({
     products,
-    addProductToCart,
     removeProductFromCart,
     productsInCart,
     changeProductQuantity,
@@ -21,19 +20,8 @@ const Main = ({
                     <div className="aside">
                     </div>
                     <div className="main-content">
-                        <Route path="/" exact render={() => (
-                            <ProductList
-                            addProductToCart={addProductToCart}
-                            />
-                        )}/>
-                        <Route path="/cart" render={() => (
-                            <CartPage
-                            products={products}
-                            productsInCart={productsInCart}
-                            removeProductFromCart={removeProductFromCart}
-                            changeProductQuantity={changeProductQuantity}
-                            />
-                        )}/>
+                        <Route exact path="/" component={ProductList}/>
+                        <Route path="/cart" component={CartPage}/>
                         <Route path="/payment" component={Payment}/>
                         <Route path="/shipping" component={Shipping}/>
                         <Route path="/checkout" component={CheckoutPage}/>
