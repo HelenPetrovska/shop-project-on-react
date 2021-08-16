@@ -19,7 +19,7 @@ const Main = ({
     return (
         <main className="main">
             <div className="container">
-                <div className="row-main">zz
+                <div className="row-main">
                     <div className="aside">
                         Filter
                     </div>
