@@ -3,10 +3,8 @@ import { Route } from 'react-router-dom'
 import CartPage from './CartPage/CartPage'
 import Payment from './Payment/Payment'
 import Shipping from './Shipping/Shipping'
-
-
+import ProductPage from './ProductPage/ProductPage'
 import ProductList from './Products/ProductList'
-import Testimonials from '../../Components/Testimonials/Testimonials'
 import CheckoutPage from './CheckoutPage/CheckoutPage'
 
 const Main = ({
@@ -21,10 +19,9 @@ const Main = ({
             <div className="container">
                 <div className="row-main">
                     <div className="aside">
-                        Filter
                     </div>
                     <div className="main-content">
-                        <Route path="/" exact render={()=> (
+                        <Route path="/" exact render={() => (
                             <ProductList
                             addProductToCart={addProductToCart}
                             />
@@ -39,8 +36,8 @@ const Main = ({
                         )}/>
                         <Route path="/payment" component={Payment}/>
                         <Route path="/shipping" component={Shipping}/>
-                        <Route path="/" exact component={Testimonials}/>
                         <Route path="/checkout" component={CheckoutPage}/>
+                        <Route path="/products/:id" component={ProductPage}/>
                     </div>
                 </div>
             </div>
